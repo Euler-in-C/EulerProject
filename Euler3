@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main()
+{
+    long n=600851475143;
+    int trial=2;
+    long k=n;
+    while (trial<=k)
+    {
+        if (k%trial!=0)
+        trial++;
+        else k=k/trial;
+    }
+    printf("The largest prime factor of %ld is %d", n, trial);
+    
+    
+}
