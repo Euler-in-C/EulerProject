@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main()
+{
+int k=50;
+int x[2]={1,1};
+int y[2]={2,2};
+int sum=2;
+int count=2;
+while (count<=k)
+{
+
+    x[0] = ++count;
+    x[1]=x[1]+y[1];
+    if(x[1]>4000000)
+    break;
+    if (x[1]%2==0)
+    sum+=x[1];
+    y[0] = ++count;
+    y[1]=x[1]+y[1];
+    if (y[1]>4000000)
+    break;
+    if (y[1]%2==0)
+    sum+=y[1];
+
+
+/* printf("Fibonacci number %d is %d \n", x[0], x[1]);
+printf("Fibonacci number %d is %d \n", y[0], y[1]); */
+}
+printf("The sum of the even Fibonacci numbers less than 4000000 is %d", sum);
+    return 0;
+}
