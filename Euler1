@@ -1,0 +1,24 @@
+#include <stdio.h>
+int sumofmults(int max, int mult);
+int main()
+{
+    printf("Hello World \n");
+    int x=1000;
+    int n=5;
+    int m=3;
+printf("The sum of multipless of %d less than %d is %d \n", n, x, sumofmults(x, n));
+printf("The sum of multipless of %d less than %d is %d \n", m, x, sumofmults(x, m));
+printf("The sum of multipless of %d or %d less %d is %d \n", n, m, x, sumofmults(x,n)+sumofmults(x,m)-sumofmults(x,m*n));
+    return 0;
+}
+int sumofmults(int max, int mult) {
+int k=mult;
+int result=0;
+while (k<max)
+{
+    result+=k;
+    k=k+mult;
+}
+    
+return (result);
+}
