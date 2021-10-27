@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include<math.h>
+
+int isprime(long num);
+int main() {
+
+printf("%d \n", isprime(2));
+
+long count=2;
+long long total=0;
+long number=0;
+while(count<=2000000) {
+if (isprime(count)==1){
+printf("%ld is prime \n", count );
+total+=count;
+number++;
+}
+count++;
+
+}
+printf("the total of all these primes is %lld \n", total); 
+printf("the number of all these primes is %ld \n", number); 
+
+
+    return(0);
+}
+int isprime(long num){
+    int trial=2;
+    long k=num;
+    int prime;
+    while (trial<k && trial<=sqrt((double)num)+2)
+    {
+        if (k%trial!=0)
+            trial++;
+        else k=k/trial;
+
+    }
+    if (k==num)
+    {
+        prime=1;
+    }
+    else
+        prime=0;
+return(prime);
+
+}
