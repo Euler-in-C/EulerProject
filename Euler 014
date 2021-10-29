@@ -1,0 +1,49 @@
+#include<stdio.h>
+#include<stdlib.h>
+unsigned long max(unsigned long x, unsigned long y){
+    unsigned long M;
+    if (x>=y)
+        M=x;
+    else
+        M=y;
+    return(M);
+}
+unsigned long Collatzlength(unsigned long long x){
+unsigned long result=1;
+    while (x!=1) {
+        if (x%2==0){
+            x=x/2;
+ //           printf("Step %lu * 2: \t %llu \n", result, x);
+        }
+        else {
+            x*=3;
+            x++;
+ //           printf("Step %lu 3n+1: \t %llu  \n", result, x);
+        }
+        result++;
+    }
+
+    return result;
+}
+int main(){
+    unsigned long long i;
+    unsigned long M=0;
+    unsigned long N=0;
+    for (i=1; i<=1000000; i++){
+        unsigned long y=Collatzlength(i);
+        if (y>M){
+            M=y;
+            N=i;
+        }
+    }
+    printf("%lu is the longest, with length %lu \n", N, M);
+
+
+
+//unsigned long x=Collatzlength(837799);
+
+
+
+
+return 0;
+}
